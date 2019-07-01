@@ -1,8 +1,8 @@
-import React from 'react';
-import moment from 'moment'
-import pad from '../utils/pad';
-import pluralize from '../utils/pluralize';
-import './Countdown.css';
+import React from "react";
+import moment from "moment";
+import pad from "../utils/pad";
+import pluralize from "../utils/pluralize";
+import "./Countdown.css";
 
 export default class Countdown extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class Countdown extends React.Component {
         this.state = {
            dateTo: moment(this.props.dateTo),
            day: 0, hour: 0, min: 0, sec: 0
-        };
+        };   
     }
 
     componentDidMount() {
@@ -31,6 +31,7 @@ export default class Countdown extends React.Component {
         let hour = this.state.dateTo.diff(now, "hours") % 24;
         let day = this.state.dateTo.diff(now, "days");
         this.setState({
+            dateTo: moment(this.props.dateTo),
             day: pad(day, 2), hour: pad(hour, 2), min: pad(min, 2), sec: pad(sec, 2)
         });
     }
