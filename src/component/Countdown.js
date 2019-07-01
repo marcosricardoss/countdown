@@ -31,7 +31,7 @@ export default class Countdown extends React.Component {
         let hour = this.state.dateTo.diff(now, "hours") % 24;
         let day = this.state.dateTo.diff(now, "days");
         this.setState({
-            day: pad(day, 2), hour: pad(hour, 2), min: pad(min, 2), sec: pad(sec, 2),
+            day: pad(day, 2), hour: pad(hour, 2), min: pad(min, 2), sec: pad(sec, 2)
         });
     }
 
