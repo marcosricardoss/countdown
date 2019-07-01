@@ -1,12 +1,11 @@
 import React from 'react';
+import Countdown from "./Countdown";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3>THE COUNTDOWN</h3>
-      </header>
+    <div className="component-app">
+      <Countdown dateTo={{ year: 2019, month: 6, date: 2 }}/>
     </div>
   );
 }
