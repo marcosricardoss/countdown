@@ -25,16 +25,14 @@ export default class Countdown extends React.Component {
 
     timer() {    
         this.setState({       
-            now: new Date()
+            now: moment()  
         });
     }
 
     render() {
-        let timeTo;
-        if (this.props.timeTo > this.state.now) {
-            timeTo = moment(this.props.timeTo)            
-        } else {
-            timeTo = moment(this.state.now)
+        let timeTo = moment(this.props.timeTo);
+        if (timeTo < this.state.now) {
+            timeTo = this.state.now;          
         }
         let sec = timeTo.diff(this.state.now, "seconds") % 60;
         let min = timeTo.diff(this.state.now, "minutes") % 60;
