@@ -10,6 +10,7 @@ export default class App extends React.Component {
       now: new Date(), 
       timeTo: new Date(new Date(0, 0, 1).setFullYear(new Date().getFullYear() + 1))
     }    
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -41,10 +42,13 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="component-app">
-        <Countdown now={this.state.now} timeTo={this.state.timeTo} />
+        <Countdown 
+          now={this.state.now} 
+          timeTo={this.state.timeTo} 
+        />
         <ButtonPanel 
           selected={this.state.timeTo} 
-          onClick={(i) => this.handleClick(i)} 
+          onClick={this.handleClick} 
         />
       </div>
     );
