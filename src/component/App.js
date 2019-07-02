@@ -7,27 +7,9 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {    
-      now: new Date(), 
       timeTo: new Date(new Date(0, 0, 1).setFullYear(new Date().getFullYear() + 1))
     }    
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.timerID = setInterval(
-        () => this.timer(),
-        1000
-    );
-  }
-
-  componentWillUnmount() {
-      clearInterval(this.timerID);
-  }
-
-  timer() {    
-    this.setState({       
-      now: new Date()
-    });
   }
 
   handleClick(time) {
@@ -43,8 +25,7 @@ export default class App extends React.Component {
     return (
       <div className="component-app">
         <Countdown 
-          now={this.state.now} 
-          timeTo={this.state.timeTo} 
+           timeTo={this.state.timeTo} 
         />
         <ButtonPanel 
           selected={this.state.timeTo} 
