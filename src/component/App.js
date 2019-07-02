@@ -9,10 +9,8 @@ export default class App extends React.Component {
     this.state = {    
       now: new Date(), 
       timeTo: new Date(new Date(0, 0, 1).setFullYear(new Date().getFullYear() + 1))
-    }
-    this.handleChange.bind(this);
+    }    
   }
-
 
   componentDidMount() {
     this.timerID = setInterval(
@@ -31,19 +29,23 @@ export default class App extends React.Component {
     });
   }
 
-  handleChange(time) {
+  handleClick(time) {
+    console.log(time)
     if (time > new Date()) {
       this.setState({
         timeTo: time
       });
-    }    
-  }
+    } 
+  }  
 
   render() {
     return (
       <div className="component-app">
         <Countdown now={this.state.now} timeTo={this.state.timeTo} />
-        <ButtonPanel date={this.state.timeTo} onChange={(i) => this.handleChange(i)} />
+        <ButtonPanel 
+          selected={this.state.timeTo} 
+          onClick={(i) => this.handleClick(i)} 
+        />
       </div>
     );
   }  

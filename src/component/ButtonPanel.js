@@ -23,25 +23,40 @@ ButtonInput.propTypes = {
 };
 
 export default class ButtonPanel extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {    
+            selected: this.props.selected
+        }
+      }
+
+    handleChange(time) {        
+        this.setState({
+            selected: time
+        });           
+    }
+
     render() {
         return (
             <div>                
                 <DatePicker 
                     customInput={<ButtonInput />}
-                    selected={this.props.date}
-                    onChange={this.props.onChange}      
-                    title={moment(this.props.date).format('DD-MM-YYYY')}
+                    selected={this.state.selected}
+                    onChange={(i) => this.handleChange(i)}      
+                    title={moment(this.state.selected).format('DD-MM-YYYY')}
                 />
                 <DatePicker 
                     customInput={<ButtonInput />}
-                    selected={this.props.date}
-                    onChange={this.props.onChange}
+                    selected={this.state.selected}
+                    onChange={(i) => this.handleChange(i)}
                     showTimeSelect
                     showTimeSelectOnly
                     timeFormat="HH:mm"
-                    title={moment(this.props.date).format('HH:mm')}
+                    title={moment(this.state.selected).format('HH:mm')}
                 />
+                <button onClick={() => this.props.onClick(this.state.selected)}>Ok</button>
             </div>
+            
         );
     }
 }
