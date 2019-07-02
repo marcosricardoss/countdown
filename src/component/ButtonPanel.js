@@ -1,26 +1,9 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import moment from "moment";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ButtonInput from "./ButtonInput"
 import "./ButtonPanel.css";
-
-class ButtonInput extends React.Component {
-    render () {
-        return (
-        <button
-            className="example-custom-input"
-            onClick={this.props.onClick}>
-            {this.props.title}
-        </button>
-        )
-    }
-}
-
-ButtonInput.propTypes = {
-    onClick: PropTypes.func,
-    title: PropTypes.string
-};
 
 export default class ButtonPanel extends React.Component {
     constructor(props){
@@ -52,6 +35,7 @@ export default class ButtonPanel extends React.Component {
                     showTimeSelect
                     showTimeSelectOnly
                     timeFormat="HH:mm"
+                    timeIntervals={15}
                     title={moment(this.state.selected).format('HH:mm')}
                 />
                 <button onClick={() => this.props.onClick(this.state.selected)}>Ok</button>
