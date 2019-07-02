@@ -30,15 +30,21 @@ export default class Countdown extends React.Component {
     }
 
     render() {
-        let timeTo = moment(this.props.timeTo)
+        let timeTo;
+        if (this.props.timeTo > this.state.now) {
+            timeTo = moment(this.props.timeTo)            
+        } else {
+            timeTo = moment(this.state.now)
+        }
         let sec = timeTo.diff(this.state.now, "seconds") % 60;
         let min = timeTo.diff(this.state.now, "minutes") % 60;
         let hour = timeTo.diff(this.state.now, "hours") % 24;
         let day = timeTo.diff(this.state.now, "days");
         return (
             <div>          
-                { pluralize(day, 'day') } { pad(hour, 2) }:{ pad(min, 2) }:{ pad(sec, 2) }
-            </div>
+                <div>{ pluralize(day, 'day') } { pad(hour, 2) }:{ pad(min, 2) }:{ pad(sec, 2) }</div>
+                <div>{moment(this.props.timeTo).format('LLLL')}</div>
+            </div>           
         );
     }
 }

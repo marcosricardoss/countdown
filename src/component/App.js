@@ -13,12 +13,9 @@ export default class App extends React.Component {
   }
 
   handleClick(time) {
-    console.log(time)
-    if (time > new Date()) {
-      this.setState({
-        timeTo: time
-      });
-    } 
+    this.setState({
+      timeTo: time
+    });  
   }  
 
   render() {
