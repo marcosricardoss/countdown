@@ -21,7 +21,7 @@ export default class ButtonPanel extends React.Component {
 
     render() {
         return (
-            <div>                
+            <div id='component-button'>                
                 <DatePicker 
                     customInput={<ButtonInput />}
                     selected={this.state.selected}

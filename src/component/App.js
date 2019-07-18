@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="component-app">
+      <div id="component-app">
         <Countdown 
            timeTo={this.state.timeTo} 
         />

@@ -1,0 +1,13 @@
+#component-button {
+    position: absolute;
+    bottom: 5vh;
+    right: 0;
+}
+
+#component-button button {
+    background: rgba(63, 75, 96, 0.8);
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+    margin: 0 2px;
+}

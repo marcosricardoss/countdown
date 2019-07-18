@@ -1,0 +1,21 @@
+#component-countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+}
+
+#component-countdown #days {
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+#component-countdown #timer {
+    font-size: 7.3rem;
+}
+
+#component-countdown #date {
+    font-size: 1.6rem;
+}

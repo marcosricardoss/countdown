@@ -39,9 +39,10 @@ export default class Countdown extends React.Component {
         let hour = timeTo.diff(this.state.now, "hours") % 24;
         let day = timeTo.diff(this.state.now, "days");
         return (
-            <div>          
-                <div>{ pluralize(day, 'day') } { pad(hour, 2) }:{ pad(min, 2) }:{ pad(sec, 2) }</div>
-                <div>{moment(this.props.timeTo).format('LLLL')}</div>
+            <div id='component-countdown'>       
+                <div id="days">{ pluralize(day, 'day') }</div>
+                <div id="timer">{ pad(hour, 2) }:{ pad(min, 2) }:{ pad(sec, 2) }</div>
+                <div id="date">{moment(this.props.timeTo).format('LLLL')}</div>
             </div>           
         );
     }
