@@ -19,3 +19,12 @@
 #component-button #buttons > * {
     margin: 0 0.2rem;
 }
+
+@media screen and (max-width: 600px) {
+    #component-button {
+        align-items: center;
+        right: 0;
+        width: 100vw;
+    }
+    
+}
