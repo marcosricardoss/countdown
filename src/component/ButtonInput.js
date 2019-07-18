@@ -5,7 +5,7 @@ export default class ButtonInput extends React.Component {
     render () {
         return (
         <button
-            className="example-custom-input"
+            className={this.props.className}
             onClick={this.props.onClick}>
             {this.props.title}
         </button>
@@ -15,5 +15,6 @@ export default class ButtonInput extends React.Component {
 
 ButtonInput.propTypes = {
     onClick: PropTypes.func,
-    title: PropTypes.string
+    title: PropTypes.string,
+    className: PropTypes.string
 };
