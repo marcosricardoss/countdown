@@ -5,6 +5,7 @@
     color: #fff;
     height: 100%;
     text-align: center;
+    padding: 2rem;
 }
 
 #component-countdown #days {
@@ -18,4 +19,19 @@
 
 #component-countdown #date {
     font-size: 1.6rem;
+}
+
+@media screen and (max-width: 450px) {
+    #component-countdown #days {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #component-countdown #days {
+        font-size: 7rem;
+    }
+    #component-countdown #timer {
+        font-size: 6rem;
+    }
 }
