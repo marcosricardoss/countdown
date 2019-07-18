@@ -14,8 +14,14 @@ export default class ButtonPanel extends React.Component {
         }
       }
 
+    componentWillReceiveProps(newProps) {    
+        this.setState({
+            changed: false
+        });
+    }
+
     handleChange(time) {   
-        let changed = time.getTime() !== this.props.selected.getTime()  
+        let changed = time.getTime() !== this.props.selected.getTime();  
         this.setState({
             selected: time,
             changed: changed
@@ -24,6 +30,7 @@ export default class ButtonPanel extends React.Component {
 
     render() {
         let btClassName = this.state.changed ? "btn btn-danger" : "btn";
+        console.log(this.state.changed)
         return (
             <div id='component-button'>    
                 <span>pick a date</span>
