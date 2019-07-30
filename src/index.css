@@ -4,7 +4,6 @@
 
 html {
   height: 100%;
-  font-size: 10px; 
 }
   
 body {
@@ -15,13 +14,27 @@ body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a.large {
+  font-size: 1.6875rem;
+  top: 10px;
+}
+
 .btn {
   border-radius: 2px;
-  background: rgba(63, 75, 96, 0.8);
+  background: none;
   color: #fff;
   font-weight: bold;
-  border: 1px solid #fff;
-  line-height: 1.5;
+  border: 1px solid #aeaeae;
+  line-height: 1.5rem;
   cursor: pointer;
 }
 
@@ -41,5 +54,14 @@ body {
 
 #root {
   background: rgba(63,75,96, 0.5);
-  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.show-menu-link {
+  position: absolute;  
+  right: 20px;
 }
