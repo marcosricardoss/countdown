@@ -21,7 +21,7 @@
     font-size: 1rem;
 }
 
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 400px) and (max-width: 600px) {
     #component-countdown #days {
         font-size: 4.375rem;
     }
