@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from './App';
-import Countdown from './Countdown';
-import Sidebar from './Sidebar';
+import App from '../App';
+import Countdown from '../Countdown';
+import Sidebar from '../Sidebar';
 
 describe('App', () => {
   describe('Rendering', () => {    
